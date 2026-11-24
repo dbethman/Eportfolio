@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-canvas: #0B0C10;
+  --color-surface: #14161D;
+  --color-subtle: #1C1F2A;
+  --color-line: #272B38;
+  --color-line-strong: #3E4458;
+  --color-ink: #F4F4F5;
+  --color-ink-secondary: #D4D4D8;
+  --color-ink-muted: #9CA3AF;
+  --color-accent: #F59E0B;
+  --color-accent-hover: #FBBF24;
+  --color-accent-text: #FBBF24;
+  --color-accent-fg: #0B0C10;
+  --color-success: #34D399;
+}
+
+:root {
+  color-scheme: dark;
+  --blueprint-line: rgba(245, 158, 11, 0.06);
+  --schematic-ink: #F4F4F5;
+  --schematic-muted: #9CA3AF;
+  --schematic-plate: #101218;
+  --schematic-accent: #F59E0B;
+  --schematic-fill: rgba(245, 158, 11, 0.14);
+  --schematic-secondary: #38BDF8;
+  --schematic-secondary-fill: rgba(56, 189, 248, 0.08);
+  --schematic-danger: #FB7185;
+  --schematic-danger-fill: rgba(251, 113, 133, 0.16);
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    color: var(--color-ink);
+    background-color: var(--color-canvas);
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    letter-spacing: 0.008em;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+  }
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Subtle engineering grid background for technical visualization stages */
+.blueprint-grid {
+  background-image:
+    linear-gradient(to right, var(--blueprint-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--blueprint-line) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
